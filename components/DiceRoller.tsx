@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import type { ReactElement } from 'react';
 
 interface DiceRollerProps {
   onRoll: (value: number, diceType: number) => void;
@@ -42,7 +43,7 @@ export default function DiceRoller({ onRoll }: DiceRollerProps) {
 
   const getDiceFace = (value: number) => {
     if (selectedDice === 6 && numberOfDice === 1) {
-      const dots: { [key: number]: JSX.Element } = {
+      const dots: { [key: number]: ReactElement } = {
         1: (
           <div className="flex items-center justify-center h-full">
             <div className="w-4 h-4 bg-white rounded-full"></div>
